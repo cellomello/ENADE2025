@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Revisão Enade - Processos Gerenciais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #1976D2;
+            align-self: center;
+            justify-self: center;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 768px) {
+            .flow-arrow {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D47A1',
+                        secondary: '#1976D2',
+                        accent1: '#42A5F5',
+                        accent2: '#90CAF9',
+                        bgLight: '#F4F7FA',
+                        textDark: '#1A202C',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bgLight text-textDark">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-10 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-3">Infográfico: Revisão Enade 2025</h1>
+            <p class="text-xl md:text-2xl text-secondary font-medium">Curso Superior de Tecnologia em Processos Gerenciais</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">Lauda 1: Fundamentos da Administração e Planejamento Estratégico</h2>
+                <p class="text-gray-700 mb-6">A base de toda gestão. Esta seção revisa o ciclo administrativo clássico e as ferramentas essenciais para formular a estratégia organizacional.</p>
+                
+                <h3 class="text-xl font-semibold text-secondary mb-3">O Processo Administrativo (PODC)</h3>
+                <p class="text-gray-600 mb-6">O ciclo PODC é a fundação da prática gerencial, um processo contínuo de quatro etapas interdependentes para alcançar objetivos organizacionais.</p>
+                <div class="grid grid-cols-1 md:grid-cols-9 gap-4 items-center justify-center">
+                    <div class="bg-accent2/20 rounded-lg p-4 text-center shadow">
+                        <h4 class="font-bold text-primary">1. Planejar</h4>
+                        <p class="text-sm text-gray-700">Definir objetivos, metas e meios para alcançá-los.</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="bg-accent2/20 rounded-lg p-4 text-center shadow">
+                        <h4 class="font-bold text-primary">2. Organizar</h4>
+                        <p class="text-sm text-gray-700">Alocar e estruturar os recursos (humanos, materiais).</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="bg-accent2/20 rounded-lg p-4 text-center shadow">
+                        <h4 class="font-bold text-primary">3. Dirigir</h4>
+                        <p class="text-sm text-gray-700">Conduzir e motivar as pessoas para a execução.</p>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="bg-accent2/20 rounded-lg p-4 text-center shadow">
+                        <h4 class="font-bold text-primary">4. Controlar</h4>
+                        <p class="text-sm text-gray-700">Monitorar, comparar o planejado com o executado e corrigir desvios.</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">↺</div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Balanced Scorecard (BSC)</h3>
+                <p class="text-gray-600 mb-4">O BSC traduz a visão e estratégia em objetivos e indicadores tangíveis, balanceando quatro perspectivas cruciais para a gestão.</p>
+                <div class="chart-container h-80 md:h-96 max-h-96">
+                    <canvas id="bscChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Análise SWOT (FOFA)</h3>
+                <p class="text-gray-600 mb-6">A Análise SWOT é a ferramenta de diagnóstico fundamental que examina os ambientes interno (controlável) e externo (não controlável) da organização.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <div class="bg-green-100 border-l-4 border-green-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-green-800 text-lg">Ambiente Interno (Controlável)</h4>
+                    </div>
+                    <div class="bg-blue-100 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-blue-800 text-lg">Ambiente Externo (Não Controlável)</h4>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h5 class="font-semibold text-green-700 text-xl mb-2">Forças (Strengths)</h5>
+                        <p class="text-gray-600">Vantagens internas e recursos que a empresa possui e que a destacam positivamente.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h5 class="font-semibold text-blue-700 text-xl mb-2">Oportunidades (Opportunities)</h5>
+                        <p class="text-gray-600">Aspectos externos positivos que a empresa pode aproveitar para crescer ou melhorar.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h5 class="font-semibold text-red-700 text-xl mb-2">Fraquezas (Weaknesses)</h5>
+                        <p class="text-gray-600">Desvantagens internas e limitações que prejudicam o desempenho da organização.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <h5 class="font-semibold text-gray-700 text-xl mb-2">Ameaças (Threats)</h5>
+                        <p class="text-gray-600">Aspectos externos negativos que podem representar riscos ou desafios para a empresa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">Lauda 2: Gestão de Processos, Operações e Logística</h2>
+                <p class="text-gray-700 mb-6">O coração do curso: como o trabalho é executado, otimizado e entregue ao cliente. Foca no BPM, melhoria contínua e na cadeia de suprimentos.</p>
+                
+                <h3 class="text-xl font-semibold text-secondary mb-3">Ciclo de Gestão de Processos (BPM)</h3>
+                <p class="text-gray-600 mb-6">BPM é uma disciplina de gestão contínua que visa otimizar os processos de negócio de ponta a ponta. O ciclo BPM estrutura essa melhoria.</p>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="bg-accent2/20 p-3 rounded-lg text-center shadow flex flex-col justify-center">
+                        <h4 class="font-bold text-primary">1. Modelagem (AS-IS)</h4>
+                        <p class="text-sm text-gray-700 hidden md:block">Entender e desenhar o processo atual.</p>
+                    </div>
+                    <div class="bg-accent2/20 p-3 rounded-lg text-center shadow flex flex-col justify-center">
+                        <h4 class="font-bold text-primary">2. Análise</h4>
+                        <p class="text-sm text-gray-700 hidden md:block">Identificar gargalos, custos e falhas.</p>
+                    </div>
+                    <div class="bg-accent2/20 p-3 rounded-lg text-center shadow flex flex-col justify-center">
+                        <h4 class="font-bold text-primary">3. Redesenho (TO-BE)</h4>
+                        <p class="text-sm text-gray-700 hidden md:block">Projetar o processo melhorado.</p>
+                    </div>
+                    <div class="bg-accent2/20 p-3 rounded-lg text-center shadow flex flex-col justify-center">
+                        <h4 class="font-bold text-primary">4. Implantação</h4>
+                        <p class="text-sm text-gray-700 hidden md:block">Colocar o novo processo em prática.</p>
+                    </div>
+                    <div class="bg-accent2/20 p-3 rounded-lg text-center shadow flex flex-col justify-center">
+                        <h4 class="font-bold text-primary">5. Monitoramento</h4>
+                        <p class="text-sm text-gray-700 hidden md:block">Medir o desempenho com KPIs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Melhoria Contínua (PDCA)</h3>
+                <p class="text-gray-600 mb-4">O Ciclo PDCA é a ferramenta mais fundamental para a melhoria contínua e a resolução de problemas em qualquer processo.</p>
+                <div class="chart-container h-80 md:h-96 max-h-96">
+                    <canvas id="pdcaChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Logística vs. Supply Chain (SCM)</h3>
+                <p class="text-gray-600 mb-4">É crucial diferenciar Logística (foco no fluxo físico) de Supply Chain Management (gestão integrada de toda a cadeia de valor).</p>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-secondary p-4 bg-blue-50 rounded-r-lg">
+                        <h4 class="font-bold text-secondary">Logística (Operacional)</h4>
+                        <p class="text-gray-700">Foca na gestão do fluxo de materiais: Transporte, Armazenagem e Distribuição. É *parte* do SCM.</p>
+                    </div>
+                    <div class="border-l-4 border-primary p-4 bg-blue-100 rounded-r-lg">
+                        <h4 class="font-bold text-primary">Supply Chain (Estratégico)</h4>
+                        <p class="text-gray-700">Gestão integrada de *todos os elos* (desde o fornecedor do fornecedor até o cliente final), incluindo compras, produção e a relação estratégica entre as empresas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">Lauda 3: Finanças, Custos e Pessoas</h2>
+                <p class="text-gray-700 mb-6">Processos eficientes devem ser financeiramente viáveis e executados por pessoas capacitadas. Esta lauda une finanças, custos e RH estratégico.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Análise de Custos: Fixos vs. Variáveis</h3>
+                <p class="text-gray-600 mb-4">Compreender como os custos se comportam em relação ao volume de produção é vital para a precificação e para encontrar o Ponto de Equilíbrio.</p>
+                <div class="chart-container">
+                    <canvas id="custosChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">A Equação do Balanço Patrimonial</h3>
+                <p class="text-gray-600 mb-4">O Balanço Patrimonial mostra a posição financeira da empresa. Sua equação fundamental (Ativo = Passivo + PL) deve estar sempre em equilíbrio.</p>
+                <div class="chart-container">
+                    <canvas id="balancoChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Gestão por Competências (CHA)</h3>
+                <p class="text-gray-600 mb-4">O RH estratégico gerencia pessoas com base no "CHA", o tripé que define a competência de um indivíduo para uma função.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-2xl font-bold text-primary mr-3">C</span>
+                        <div>
+                            <h4 class="font-semibold text-textDark">Conhecimento</h4>
+                            <p class="text-gray-600">O "saber". Refere-se ao conhecimento técnico e teórico (formação, saber o que fazer).</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-2xl font-bold text-primary mr-3">H</span>
+                        <div>
+                            <h4 class="font-semibold text-textDark">Habilidade</h4>
+                            <p class="text-gray-600">O "saber fazer". Refere-se à capacidade de aplicar o conhecimento na prática (experiência).</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-2xl font-bold text-primary mr-3">A</span>
+                        <div>
+                            <h4 class="font-semibold text-textDark">Atitude</h4>
+                            <p class="text-gray-600">O "querer fazer". Refere-se ao comportamento, proatividade e motivação (soft skills).</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Cultura vs. Clima Organizacional</h3>
+                <p class="text-gray-600 mb-4">Dois conceitos de RH frequentemente confundidos. A Cultura é a raiz (profunda), enquanto o Clima é a percepção (momentânea).</p>
+                <div class="space-y-4">
+                    <div class="border p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-primary">Cultura 🏛️</h4>
+                        <p class="text-gray-700">O "jeito de ser" da empresa. Valores e crenças compartilhadas. É profunda, estável e difícil de mudar.</p>
+                    </div>
+                    <div class="border p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-secondary">Clima 🌤️</h4>
+                        <p class="text-gray-700">A *percepção* momentânea dos funcionários sobre o ambiente. É superficial, volátil e mais fácil de medir e mudar.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">Lauda 4: Qualidade, Marketing, Sustentabilidade e Ética</h2>
+                <p class="text-gray-700 mb-6">Temas transversais que integram a gestão moderna. A qualidade garante a entrega, o marketing garante o valor, e o ESG garante a perenidade.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Mix de Marketing (Os 4 Ps)</h3>
+                <p class="text-gray-600 mb-4">O Mix de Marketing é o conjunto de ferramentas táticas que a empresa usa para buscar seus objetivos no mercado-alvo.</p>
+                <div class="chart-container h-80 md:h-96 max-h-96">
+                    <canvas id="marketingMixChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-secondary mb-3">Pilares da Gestão ESG</h3>
+                <p class="text-gray-600 mb-6">ESG (Ambiental, Social e Governança) define os pilares da gestão sustentável e da responsabilidade corporativa moderna, temas cruciais no Enade.</p>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-green-100 p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-green-800 text-lg mb-1">E (Environmental) 🌳</h4>
+                        <p class="text-gray-700">Gestão de resíduos, uso de energia limpa, impacto na biodiversidade e pegada de carbono.</p>
+                    </div>
+                    <div class="bg-blue-100 p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-blue-800 text-lg mb-1">S (Social) 🤝</h4>
+                        <p class="text-gray-700">Relação com funcionários (saúde, segurança), diversidade, impacto na comunidade local.</p>
+                    </div>
+                    <div class="bg-gray-200 p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-gray-800 text-lg mb-1">G (Governance) 🏛️</h4>
+                        <p class="text-gray-700">Transparência, ética nos negócios, combate à corrupção, direitos dos acionistas.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="text-center mt-12 md:mt-16 pt-8 border-t border-gray-300">
+            <p class="text-gray-600">Este é um material de revisão e não substitui o estudo aprofundado dos temas. Boa prova!</p>
+            <p class="text-sm text-gray-500 mt-2">Infográfico gerado para fins educacionais.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const defaultPalette = ['#0D47A1', '#1976D2', '#42A5F5', '#90CAF9'];
+            
+            const wrapLabel = (str, maxLen = 16) => {
+                if (str.length <= maxLen) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxLen) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const defaultTooltipCallbacks = {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    }
+                    return label;
+                }
+            };
+            
+            const bscCtx = document.getElementById('bscChart');
+            if (bscCtx) {
+                const bscLabels = [
+                    'Financeira',
+                    'Clientes',
+                    'Processos Internos',
+                    'Aprendizado e Crescimento'
+                ].map(label => wrapLabel(label, 16));
+                
+                new Chart(bscCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: bscLabels,
+                        datasets: [{
+                            label: 'Perspectivas do BSC',
+                            data: [25, 25, 25, 25],
+                            backgroundColor: defaultPalette,
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: defaultTooltipCallbacks
+                            }
+                        }
+                    }
+                });
+            }
+
+            const pdcaCtx = document.getElementById('pdcaChart');
+            if (pdcaCtx) {
+                new Chart(pdcaCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Planejar (Plan)', 'Executar (Do)', 'Verificar (Check)', 'Agir (Act)'],
+                        datasets: [{
+                            label: 'Ciclo PDCA',
+                            data: [25, 25, 25, 25],
+                            backgroundColor: ['#0D47A1', '#1976D2', '#42A5F5', '#90CAF9'],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: defaultTooltipCallbacks
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const custosCtx = document.getElementById('custosChart');
+            if (custosCtx) {
+                new Chart(custosCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['0', '100', '200', '300', '400', '500'],
+                        datasets: [
+                            {
+                                label: 'Custo Fixo (R$ 1000)',
+                                data: [1000, 1000, 1000, 1000, 1000, 1000],
+                                borderColor: '#0D47A1',
+                                backgroundColor: '#0D47A1',
+                                tension: 0.1,
+                                borderWidth: 3,
+                            },
+                            {
+                                label: 'Custo Variável (R$ 2/un)',
+                                data: [0, 200, 400, 600, 800, 1000],
+                                borderColor: '#42A5F5',
+                                backgroundColor: '#42A5F5',
+                                tension: 0.1,
+                                borderWidth: 3,
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { title: { display: true, text: 'Volume de Produção (Unidades)' } },
+                            y: { title: { display: true, text: 'Custo Total (R$)' } }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: defaultTooltipCallbacks
+                            }
+                        }
+                    }
+                });
+            }
+
+            const balancoCtx = document.getElementById('balancoChart');
+            if (balancoCtx) {
+                new Chart(balancoCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Equação Patrimonial'],
+                        datasets: [
+                            {
+                                label: 'Passivo',
+                                data: [60],
+                                backgroundColor: '#42A5F5',
+                                stack: 'Stack 0',
+                            },
+                            {
+                                label: 'Patrimônio Líquido',
+                                data: [40],
+                                backgroundColor: '#90CAF9',
+                                stack: 'Stack 0',
+                            },
+                            {
+                                label: 'Ativo',
+                                data: [100],
+                                backgroundColor: '#0D47A1',
+                                stack: 'Stack 1',
+                            }
+                        ]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { stacked: false, title: { display: true, text: 'Valor (R$)' } },
+                            y: { stacked: true }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: defaultTooltipCallbacks
+                            }
+                        }
+                    }
+                });
+            }
+
+            const marketingMixCtx = document.getElementById('marketingMixChart');
+            if (marketingMixCtx) {
+                new Chart(marketingMixCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Produto', 'Preço', 'Praça (Distribuição)', 'Promoção (Comunicação)'],
+                        datasets: [{
+                            label: 'Mix de Marketing (4 Ps)',
+                            data: [25, 25, 25, 25],
+                            backgroundColor: ['#0D47A1', '#1976D2', '#42A5F5', '#90CAF9'],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: defaultTooltipCallbacks
+                            }
+                        }
+                    }
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>

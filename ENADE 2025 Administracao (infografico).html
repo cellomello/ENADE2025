@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Revisão Enade 2025 - Administração</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .bmc-block {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .bmc-block h4 {
+            font-weight: 600;
+            color: #023047;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#023047] mb-4">Revisão Enade 2025: Administração</h1>
+            <p class="text-lg text-[#219EBC] max-w-3xl mx-auto">Um infográfico interativo sobre os pilares do Bacharelado em Administração, dos fundamentos clássicos aos desafios contemporâneos.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 overflow-hidden">
+                <h2 class="text-2xl font-bold text-[#023047] mb-4">Lauda 1: Fundamentos e Planejamento Estratégico</h2>
+                <p class="mb-6 text-gray-600">A base da administração envolve entender o processo administrativo e como definir a direção de longo prazo da organização. Ferramentas estratégicas são essenciais para o diagnóstico e a execução.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">O Processo Administrativo (PODC)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">As quatro funções essenciais que formam o ciclo de gestão.</p>
+                        <div class="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-2">
+                            <div class="text-center">
+                                <div class="bg-[#8ECAE6] text-[#023047] p-4 rounded-lg shadow-md w-36">
+                                    <span class="text-3xl font-bold">P</span>
+                                    <p class="font-semibold">Planejar</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl font-bold text-[#219EBC] transform rotate-90 md:rotate-0">&rarr;</span>
+                            <div class="text-center">
+                                <div class="bg-[#8ECAE6] text-[#023047] p-4 rounded-lg shadow-md w-36">
+                                    <span class="text-3xl font-bold">O</span>
+                                    <p class="font-semibold">Organizar</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl font-bold text-[#219EBC] transform rotate-90 md:rotate-0">&rarr;</span>
+                            <div class="text-center">
+                                <div class="bg-[#8ECAE6] text-[#023047] p-4 rounded-lg shadow-md w-36">
+                                    <span class="text-3xl font-bold">D</span>
+                                    <p class="font-semibold">Dirigir</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl font-bold text-[#219EBC] transform rotate-90 md:rotate-0">&rarr;</span>
+                            <div class="text-center">
+                                <div class="bg-[#8ECAE6] text-[#023047] p-4 rounded-lg shadow-md w-36">
+                                    <span class="text-3xl font-bold">C</span>
+                                    <p class="font-semibold">Controlar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Níveis de Planejamento</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Da visão de longo prazo à execução diária, o planejamento se desdobra em três níveis.</p>
+                        <div class="flex flex-col items-center">
+                            <div class="w-2/3 md:w-1/2 bg-[#023047] text-white p-3 text-center rounded-t-lg shadow-md">
+                                <h4 class="font-bold">Estratégico</h4>
+                                <p class="text-xs">(Longo Prazo)</p>
+                            </div>
+                            <div class="w-5/6 md:w-3/4 bg-[#219EBC] text-white p-3 text-center shadow-md">
+                                <h4 class="font-bold">Tático</h4>
+                                <p class="text-xs">(Médio Prazo)</p>
+                            </div>
+                            <div class="w-full md:w-full bg-[#8ECAE6] text-[#023047] p-3 text-center rounded-b-lg shadow-md">
+                                <h4 class="font-bold">Operacional</h4>
+                                <p class="text-xs">(Curto Prazo)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Análise SWOT (FOFA)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Diagnóstico dos ambientes interno (Forças, Fraquezas) e externo (Oportunidades, Ameaças).</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-green-100 text-green-800 p-4 rounded-lg shadow">
+                                <h4 class="font-bold">Forças (S)</h4>
+                                <p class="text-sm">Vantagens internas</p>
+                            </div>
+                            <div class="bg-red-100 text-red-800 p-4 rounded-lg shadow">
+                                <h4 class="font-bold">Fraquezas (W)</h4>
+                                <p class="text-sm">Desvantagens internas</p>
+                            </div>
+                            <div class="bg-blue-100 text-blue-800 p-4 rounded-lg shadow">
+                                <h4 class="font-bold">Oportunidades (O)</h4>
+                                <p class="text-sm">Aspectos externos positivos</p>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-800 p-4 rounded-lg shadow">
+                                <h4 class="font-bold">Ameaças (T)</h4>
+                                <p class="text-sm">Aspectos externos negativos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Balanced Scorecard (BSC)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Gestão estratégica que equilibra indicadores de quatro perspectivas-chave.</p>
+                        <div class="chart-container" style="height: 250px; max-height: 300px;">
+                            <canvas id="bscChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 overflow-hidden">
+                <h2 class="text-2xl font-bold text-[#023047] mb-4">Lauda 2: Gestão de Marketing e Finanças</h2>
+                <p class="mb-6 text-gray-600">Como a empresa gera valor para o cliente e como gerencia seus recursos. O marketing cria a demanda, enquanto as finanças garantem a viabilidade e o crescimento.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white rounded-lg p-4 md:col-span-2">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Indicadores Financeiros (Evolução)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Análise da capacidade de pagamento (Liquidez), retorno (Rentabilidade) e uso de capital de terceiros (Endividamento) ao longo de três anos.</p>
+                        <div class="chart-container" style="max-width: 900px;">
+                            <canvas id="financeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Composto de Marketing (4 Ps)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">O mix de ferramentas táticas usadas para gerar a resposta desejada no mercado-alvo.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-[#f0f9ff] p-4 rounded-lg shadow">
+                                <h4 class="font-bold text-[#023047]">Produto</h4>
+                                <p class="text-sm text-gray-700">O que é oferecido (bem/serviço)</p>
+                            </div>
+                            <div class="bg-[#f0f9ff] p-4 rounded-lg shadow">
+                                <h4 class="font-bold text-[#023047]">Preço</h4>
+                                <p class="text-sm text-gray-700">Valor cobrado e estratégias</p>
+                            </div>
+                            <div class="bg-[#f0f9ff] p-4 rounded-lg shadow">
+                                <h4 class="font-bold text-[#023047]">Praça</h4>
+                                <p class="text-sm text-gray-700">Canais de distribuição e logística</p>
+                            </div>
+                            <div class="bg-[#f0f9ff] p-4 rounded-lg shadow">
+                                <h4 class="font-bold text-[#023047]">Promoção</h4>
+                                <p class="text-sm text-gray-700">Comunicação e publicidade</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Análise de Investimentos (VPL & TIR)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Comparação de projetos: um projeto é viável se VPL > 0 e TIR > Taxa Mínima de Atratividade (TMA).</p>
+                        <div class="chart-container">
+                            <canvas id="investmentChart"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 overflow-hidden">
+                <h2 class="text-2xl font-bold text-[#023047] mb-4">Lauda 3: Gestão de Operações e Pessoas</h2>
+                <p class="mb-6 text-gray-600">O motor da organização: como o trabalho é feito (Operações) e quem o realiza (Pessoas). A eficiência dos processos e o engajamento das equipes são cruciais.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Ciclo PDCA (Melhoria Contínua)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">A ferramenta central da Gestão da Qualidade Total (TQM) para melhoria contínua de processos.</p>
+                        <div class="grid grid-cols-2 grid-rows-2 gap-4 text-center">
+                            <div class="bg-[#8ECAE6] text-[#023047] p-6 rounded-lg shadow-md flex flex-col justify-center items-center">
+                                <h4 class="font-bold text-lg">1. Plan (Planejar)</h4>
+                            </div>
+                            <div class="bg-[#219EBC] text-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center">
+                                <h4 class="font-bold text-lg">2. Do (Executar)</h4>
+                            </div>
+                            <div class="bg-[#FB8500] text-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center">
+                                <h4 class="font-bold text-lg">4. Act (Agir)</h4>
+                            </div>
+                            <div class="bg-[#023047] text-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center">
+                                <h4 class="font-bold text-lg">3. Check (Verificar)</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Subsistemas de Gestão de Pessoas</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">As áreas interdependentes da Gestão de Pessoas, do recrutamento ao desenvolvimento.</p>
+                        <div class="chart-container">
+                            <canvas id="hrChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 md:col-span-2">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Sistemas de Produção: Comparativo</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Diferenças entre o modelo tradicional de produção em massa e o modelo enxuto.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-max text-left">
+                                <thead>
+                                    <tr class="border-b border-gray-300">
+                                        <th class="p-3 bg-gray-50 text-[#023047] font-semibold">Característica</th>
+                                        <th class="p-3 bg-gray-50 text-[#023047] font-semibold">Produção em Massa (Fordismo)</th>
+                                        <th class="p-3 bg-gray-50 text-[#023047] font-semibold">Produção Enxuta (Toyotismo)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="p-3">Foco</td>
+                                        <td class="p-3">Custo e Eficiência</td>
+                                        <td class="p-3">Qualidade e Eliminar Desperdício</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="p-3">Variedade</td>
+                                        <td class="p-3">Baixa (Padronização)</td>
+                                        <td class="p-3">Alta (Flexibilidade)</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="p-3">Fluxo</td>
+                                        <td class="p-3">Produção "Empurrada" (Push)</td>
+                                        <td class="p-3">Produção "Puxada" (Pull / JIT)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 overflow-hidden">
+                <h2 class="text-2xl font-bold text-[#023047] mb-4">Lauda 4: Tópicos Contemporâneos e Integração</h2>
+                <p class="mb-6 text-gray-600">Os desafios e oportunidades que definem o administrador moderno, da sustentabilidade à transformação digital e liderança ética.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">ESG e o Tripé da Sustentabilidade</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">A empresa moderna é avaliada por seu impacto social, ambiental e de governança (ou People, Planet, Profit).</p>
+                        <div class="chart-container">
+                            <canvas id="esgChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Tipos de Inovação</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">A inovação incremental melhora o existente, enquanto a radical (disruptiva) cria novos mercados.</p>
+                        <div class="chart-container">
+                            <canvas id="innovationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4 md:col-span-2">
+                        <h3 class="text-xl font-semibold text-center text-[#023047] mb-4">Business Model Canvas (BMC)</h3>
+                        <p class="text-sm text-gray-600 text-center mb-4">Ferramenta visual para descrever, analisar e criar modelos de negócio em 9 blocos-chave.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-xs">
+                            <div class="bmc-block md:col-span-1"><h4>1. Parceiros-Chave</h4></div>
+                            <div class="bmc-block md:col-span-1"><h4>2. Atividades-Chave</h4><p>Recursos-Chave (Abaixo)</p></div>
+                            <div class="bmc-block md:col-span-1 row-span-2"><h4>3. Proposta de Valor</h4></div>
+                            <div class="bmc-block md:col-span-1"><h4>4. Relação com Clientes</h4><p>Canais (Abaixo)</p></div>
+                            <div class="bmc-block md:col-span-1 row-span-2"><h4>5. Segmentos de Clientes</h4></div>
+                            <div class="bmc-block md:col-span-1"><h4>6. Recursos-Chave</h4></div>
+                            <div class="bmc-block md:col-span-1"><h4>7. Canais</h4></div>
+                            <div class="bmc-block md:col-span-2 mt-2"><h4>8. Estrutura de Custos</h4></div>
+                            <div class="bmc-block md:col-span-3 mt-2"><h4>9. Fontes de Receita</h4></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-300">
+            <p class="text-sm text-gray-500">Este infográfico é um material de apoio e não substitui o estudo aprofundado. Baseado no documento "Material de Apoio Enade 2025 - Bacharelado em Administração".</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const palette = {
+                darkBlue: '#023047',
+                midBlue: '#219EBC',
+                lightBlue: '#8ECAE6',
+                yellow: '#FFB703',
+                orange: '#FB8500',
+                gray: '#a8a29e'
+            };
+
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            function wrapLabels(labels) {
+                return labels.map(label => {
+                    if (label.length > 16) {
+                        const words = label.split(' ');
+                        const lines = [];
+                        let currentLine = '';
+                        words.forEach(word => {
+                            if ((currentLine + ' ' + word).length > 16 && currentLine.length > 0) {
+                                lines.push(currentLine);
+                                currentLine = word;
+                            } else {
+                                currentLine += (currentLine.length > 0 ? ' ' : '') + word;
+                            }
+                        });
+                        lines.push(currentLine);
+                        return lines;
+                    }
+                    return label;
+                });
+            }
+
+            if (document.getElementById('bscChart')) {
+                const bscCtx = document.getElementById('bscChart').getContext('2d');
+                new Chart(bscCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: wrapLabels(['Financeira', 'Clientes', 'Processos Internos', 'Aprendizado e Crescimento']),
+                        datasets: [{
+                            label: 'Desempenho BSC (Exemplo)',
+                            data: [80, 70, 85, 65],
+                            backgroundColor: 'rgba(33, 158, 188, 0.2)',
+                            borderColor: palette.midBlue,
+                            borderWidth: 2,
+                            pointBackgroundColor: palette.midBlue
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        },
+                        plugins: tooltipTitleCallback.plugins
+                    }
+                });
+            }
+            
+            if (document.getElementById('financeChart')) {
+                const financeCtx = document.getElementById('financeChart').getContext('2d');
+                new Chart(financeCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Ano 1', 'Ano 2', 'Ano 3'],
+                        datasets: [{
+                            label: 'Liquidez Corrente',
+                            data: [1.5, 1.8, 1.7],
+                            backgroundColor: palette.midBlue
+                        }, {
+                            label: 'Rentabilidade (ROE %)',
+                            data: [12, 15, 14],
+                            backgroundColor: palette.lightBlue
+                        }, {
+                            label: 'Endividamento (Geral)',
+                            data: [0.45, 0.40, 0.42],
+                            backgroundColor: palette.orange
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: tooltipTitleCallback.plugins,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (document.getElementById('investmentChart')) {
+                const investmentCtx = document.getElementById('investmentChart').getContext('2d');
+                new Chart(investmentCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: wrapLabels(['Projeto A (VPL R$)', 'Projeto A (TIR %)', 'Projeto B (VPL R$)', 'Projeto B (TIR %)']),
+                        datasets: [{
+                            label: 'Valor (TMA = 10%)',
+                            data: [50000, 15, -10000, 8],
+                            backgroundColor: [palette.midBlue, palette.lightBlue, palette.orange, palette.yellow]
+                        }, {
+                            label: 'Mínimo Viável',
+                            data: [0, 10, 0, 10],
+                            backgroundColor: palette.gray
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: tooltipTitleCallback.plugins,
+                        scales: {
+                            x: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (document.getElementById('hrChart')) {
+                const hrCtx = document.getElementById('hrChart').getContext('2d');
+                new Chart(hrCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: wrapLabels(['Provisão (R&S)', 'Aplicação (Cargos)', 'Manutenção (Remun.)', 'Desenvolvimento (T&D)']),
+                        datasets: [{
+                            label: 'Subsistemas de GP',
+                            data: [25, 25, 25, 25],
+                            backgroundColor: [palette.darkBlue, palette.midBlue, palette.lightBlue, palette.yellow]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: tooltipTitleCallback.plugins
+                    }
+                });
+            }
+            
+            if (document.getElementById('esgChart')) {
+                const esgCtx = document.getElementById('esgChart').getContext('2d');
+                new Chart(esgCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: wrapLabels(['Pessoas (Social)', 'Planeta (Ambiental)', 'Lucro (Governança/Econômico)']),
+                        datasets: [{
+                            label: 'Tripé da Sustentabilidade',
+                            data: [33.3, 33.3, 33.4],
+                            backgroundColor: [palette.lightBlue, palette.midBlue, palette.orange]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: tooltipTitleCallback.plugins,
+                        cutout: '50%'
+                    }
+                });
+            }
+
+            if (document.getElementById('innovationChart')) {
+                const innovationCtx = document.getElementById('innovationChart').getContext('2d');
+                new Chart(innovationCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Ano 1', 'Ano 2', 'Ano 3', 'Ano 4', 'Ano 5'],
+                        datasets: [{
+                            label: 'Inovação Incremental',
+                            data: [10, 12, 14, 16, 18],
+                            borderColor: palette.midBlue,
+                            backgroundColor: 'rgba(33, 158, 188, 0.1)',
+                            fill: true,
+                            tension: 0.1
+                        }, {
+                            label: 'Inovação Radical',
+                            data: [10, 11, 11, 12, 40],
+                            borderColor: palette.orange,
+                            backgroundColor: 'rgba(251, 133, 0, 0.1)',
+                            fill: true,
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: tooltipTitleCallback.plugins,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Revisão ENADE 2025 - Tec. em RH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .scroll-mt-20 {
+            scroll-margin-top: 5rem;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #118AB2;
+            line-height: 1;
+        }
+        .flow-card {
+            background-color: #f0f9ff;
+            border: 2px solid #118AB2;
+            color: #073B4C;
+        }
+        .iceberg-level {
+            border: 2px solid #118AB2;
+            background-color: #f0f9ff;
+            position: relative;
+        }
+        .iceberg-level:before {
+            content: attr(data-label);
+            position: absolute;
+            top: -1px;
+            left: -2px;
+            background-color: #118AB2;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 0.375rem 0 0.375rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center max-w-7xl">
+            <div class="text-xl font-bold text-[#073B4C]">Revisão ENADE 2025</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#lauda1" class="text-gray-700 hover:text-[#118AB2] font-semibold">Lauda 1: Estratégia</a>
+                <a href="#lauda2" class="text-gray-700 hover:text-[#118AB2] font-semibold">Lauda 2: Subsistemas</a>
+                <a href="#lauda3" class="text-gray-700 hover:text-[#118AB2] font-semibold">Lauda 3: DP e Leis</a>
+                <a href="#lauda4" class="text-gray-700 hover:text-[#118AB2] font-semibold">Lauda 4: Tendências</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4 md:p-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#073B4C] mb-4">Infográfico: Revisão ENADE 2025</h1>
+            <p class="text-xl text-gray-600">Conceitos Essenciais de Tecnologia em Recursos Humanos</p>
+        </header>
+
+        <section id="lauda1" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-[#073B4C] mb-3 border-b-4 border-[#118AB2] pb-2">Lauda 1: RH Estratégico, Cultura e Planejamento</h2>
+            <p class="text-lg text-gray-700 mb-8">O "porquê" do RH: de um papel operacional para um parceiro estratégico focado em alinhar pessoas aos objetivos do negócio.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Evolução do Foco do RH</h3>
+                        <p class="text-gray-600 mb-4">Este gráfico ilustra a mudança de foco do RH ao longo do tempo. O RH moderno (Gestão de Pessoas) gasta muito mais tempo em atividades estratégicas do que o RH tradicional (DP).</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="rhEvolutionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Modelo de Cultura de Edgar Schein</h3>
+                        <p class="text-gray-600 mb-4">A cultura organizacional é como um iceberg. Vemos apenas os artefatos, mas os valores e pressupostos básicos (invisíveis) é que realmente guiam o comportamento.</p>
+                    </div>
+                    <div class="space-y-4 mt-6">
+                        <div class="iceberg-level p-4 rounded-md w-full" data-label="Nível 1: Visível">
+                            <h4 class="font-bold text-lg text-[#073B4C]">Artefatos</h4>
+                            <p class="text-gray-600">O que vemos: Layout, vestimenta, jargões, símbolos.</p>
+                        </div>
+                        <div class="iceberg-level p-4 rounded-md w-full" data-label="Nível 2: Intermediário">
+                            <h4 class="font-bold text-lg text-[#073B4C]">Valores Compartilhados</h4>
+                            <p class="text-gray-600">O que a empresa *diz*: Missão, visão, valores na parede.</p>
+                        </div>
+                        <div class="iceberg-level p-4 rounded-md w-full" data-label="Nível 3: Invisível">
+                            <h4 class="font-bold text-lg text-[#073B4C]">Pressupostos Básicos</h4>
+                            <p class="text-gray-600">O que é *real*: Crenças inconscientes, o "jeito de ser".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Gestão por Competências (CHA)</h3>
+                        <p class="text-gray-600 mb-4">O CHA define a base da competência. O RH usa esse mapa para selecionar, avaliar e treinar, buscando o equilíbrio entre o saber, o saber fazer e o querer fazer.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chaChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Cultura vs. Clima Organizacional</h3>
+                        <p class="text-gray-600 mb-4">É fundamental não confundir os conceitos. A Cultura é a "personalidade" (profunda e estável), enquanto o Clima é o "humor" (momentâneo e perceptível).</p>
+                    </div>
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4">
+                        <table class="w-full text-sm text-left text-gray-700">
+                            <thead class="text-xs text-white uppercase bg-[#073B4C]">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Conceito</th>
+                                    <th scope="col" class="px-6 py-3">Cultura</th>
+                                    <th scope="col" class="px-6 py-3">Clima</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 font-semibold">Definição</td>
+                                    <td class="px-6 py-4">Valores e Pressupostos</td>
+                                    <td class="px-6 py-4">Percepção do Ambiente</td>
+                                </tr>
+                                <tr class="bg-gray-50 border-b">
+                                    <td class="px-6 py-4 font-semibold">Estabilidade</td>
+                                    <td class="px-6 py-4">Profunda, estável</td>
+                                    <td class="px-6 py-4">Momentâneo, volátil</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-6 py-4 font-semibold">Mensuração</td>
+                                    <td class="px-6 py-4">Diagnóstico complexo</td>
+                                    <td class="px-6 py-4">Pesquisa de Clima</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="lauda2" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-[#073B4C] mb-3 border-b-4 border-[#118AB2] pb-2">Lauda 2: Os Subsistemas de RH (Processos)</h2>
+            <p class="text-lg text-gray-700 mb-8">O "como fazer" do RH. Detalhamento dos 6 processos-chave de Gestão de Pessoas, baseados no modelo de Chiavenato.</p>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h3 class="text-xl font-semibold text-[#073B4C] mb-6 text-center">Fluxo dos Subsistemas de Gestão de Pessoas</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 items-center justify-center">
+                    <div class="flow-card rounded-lg p-4 text-center font-semibold">1. Agregar (R&S)</div>
+                    <div class="hidden md:block flow-arrow text-center">→</div>
+                    <div class="flow-card rounded-lg p-4 text-center font-semibold">2. Aplicar (Cargos, AD)</div>
+                    
+                    <div class="flow-card rounded-lg p-4 text-center font-semibold">3. Recompensar (Remuneração)</div>
+                    <div class="flow-arrow text-center col-span-2 md:col-span-1">↓</div>
+                    <div class="flow-card rounded-lg p-4 text-center font-semibold">4. Desenvolver (T&D)</div>
+
+                    <div class="flow-card rounded-lg p-4 text-center font-semibold">5. Manter (QVT, SST)</div>
+                    <div class="hidden md:block flow-arrow text-center">←</div>
+                    <div class="flow-card rounded-lg p-4 text-center font-semibold">6. Monitorar (KPIs)</div>
+                </div>
+                <p class="text-center text-gray-600 mt-6">Esses processos são interligados e formam um ciclo contínuo de gestão do capital humano.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Métodos de Avaliação de Desempenho</h3>
+                        <p class="text-gray-600 mb-4">A escolha do método de Avaliação de Desempenho (AD) depende dos objetivos. A 360º oferece o feedback mais rico e complexo, enquanto a 90º é a mais direta e simples (focada na visão do líder).</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="adMethodsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">KPIs de RH: Monitoramento de Turnover</h3>
+                        <p class="text-gray-600 mb-4">Indicadores (KPIs) são vitais para o RH "Monitorar" sua eficácia. O Turnover (rotatividade) é um dos mais importantes, pois mede a saúde organizacional. Um pico, como o visto em Junho, exige investigação.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="turnoverChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="lauda3" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-[#073B4C] mb-3 border-b-4 border-[#118AB2] pb-2">Lauda 3: Relações de Trabalho e DP</h2>
+            <p class="text-lg text-gray-700 mb-8">A parte "hard" do RH: a conformidade legal (CLT), processos administrativos (DP) e a garantia da saúde e segurança (SST).</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between md:col-span-2">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Diferença: RH Estratégico vs. Departamento Pessoal (DP)</h3>
+                        <p class="text-gray-600 mb-4">Enquanto o DP garante a conformidade e a operação (folha, ponto, benefícios), o RH estratégico foca no desenvolvimento, cultura e alinhamento com o negócio.</p>
+                    </div>
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-4">
+                        <table class="w-full text-sm text-left text-gray-700">
+                            <thead class="text-xs text-white uppercase bg-[#073B4C]">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Critério</th>
+                                    <th scope="col" class="px-6 py-3">RH Estratégico (Gestão de Pessoas)</th>
+                                    <th scope="col" class="px-6 py-3">DP (Departamento Pessoal)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="px-6 py-4 font-semibold">Foco</td>
+                                    <td class="px-6 py-4">Pessoas, Cultura, Futuro</td>
+                                    <td class="px-6 py-4">Processos, Leis, Presente</td>
+                                </tr>
+                                <tr class="bg-gray-50 border-b">
+                                    <td class="px-6 py-4 font-semibold">Visão</td>
+                                    <td class="px-6 py-4">Proativa (Parceiro do Negócio)</td>
+                                    <td class="px-6 py-4">Reativa (Conformidade Legal)</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-6 py-4 font-semibold">Atividades</td>
+                                    <td class="px-6 py-4">T&D, R&S, Clima, AD, Cultura</td>
+                                    <td class="px-6 py-4">Folha, Férias, Ponto, Rescisão, eSocial</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Composição de um Holerite (Exemplo)</h3>
+                        <p class="text-gray-600 mb-4">A folha de pagamento é o resultado final dos processos do DP. Ela equilibra os Proventos (o que se ganha) com os Descontos (obrigações legais), resultando no Salário Líquido.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="holeriteChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Pilares de Saúde e Segurança (SST)</h3>
+                        <p class="text-gray-600 mb-4">As Normas Regulamentadoras (NRs) estruturam a prevenção de acidentes e doenças. O DP/RH administra esses programas.</p>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <div class="p-3 bg-gray-50 border border-gray-300 rounded-md">
+                            <span class="font-bold text-[#118AB2]">CIPA (NR-5):</span> Comissão (empresa + empregados) focada na prevenção de acidentes.
+                        </div>
+                        <div class="p-3 bg-gray-50 border border-gray-300 rounded-md">
+                            <span class="font-bold text-[#118AB2]">SESMT (NR-4):</span> Equipe técnica (Médicos, Engenheiros, Técnicos) que executa a segurança.
+                        </div>
+                        <div class="p-3 bg-gray-50 border border-gray-300 rounded-md">
+                            <span class="font-bold text-[#118AB2]">PGR (NR-1):</span> Programa de Gerenciamento de Riscos (identifica e mitiga riscos).
+                        </div>
+                        <div class="p-3 bg-gray-50 border border-gray-300 rounded-md">
+                            <span class="font-bold text-[#118AB2]">PCMSO (NR-7):</span> Programa de Controle Médico (exames admissionais, periódicos, etc).
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="lauda4" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-[#073B4C] mb-3 border-b-4 border-[#118AB2] pb-2">Lauda 4: RH 5.0 - Tendências e Humanização</h2>
+            <p class="text-lg text-gray-700 mb-8">A visão de futuro: como a tecnologia (People Analytics) e as novas demandas sociais (DE&I, ESG) estão moldando o RH.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Diversidade, Equidade e Inclusão (DE&I)</h3>
+                        <p class="text-gray-600 mb-4">Estes conceitos são a base de um RH estratégico e socialmente responsável. A Inclusão é o objetivo final, alcançado através da Diversidade de pessoas e da Equidade de oportunidades.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 text-center mt-6">
+                        <div class="bg-[#f0f9ff] p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-lg text-[#118AB2]">Diversidade</h4>
+                            <p class="text-sm text-gray-700">A Presença de Diferenças (Raça, Gênero, PCD, Idade...)</p>
+                        </div>
+                        <div class="flex items-center justify-center text-3xl font-bold text-[#118AB2]">+</div>
+                        <div class="bg-[#f0f9ff] p-4 rounded-lg shadow">
+                            <h4 class="font-bold text-lg text-[#118AB2]">Equidade</h4>
+                            <p class="text-sm text-gray-700">Dar as ferramentas justas para cada grupo (vs. Igualdade)</p>
+                        </div>
+                        <div class="col-span-3 flex items-center justify-center text-3xl font-bold text-[#118AB2]">||</div>
+                        <div class="col-span-3 bg-[#06D6A0] text-white p-4 rounded-lg shadow-lg">
+                            <h4 class="font-bold text-xl">Inclusão</h4>
+                            <p class="text-sm">Sentimento de Pertencimento e Valorização</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">O Papel do RH no ESG</h3>
+                        <p class="text-gray-600 mb-4">ESG (Ambiental, Social e Governança) é um critério de sustentabilidade. O RH é o protagonista absoluto do pilar "S" (Social), gerenciando o capital humano e as relações sociais.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="esgChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between md:col-span-2">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#073B4C] mb-4">Foco em Soft Skills vs. Hard Skills</h3>
+                        <p class="text-gray-600 mb-4">O RH 5.0 entende que é mais fácil ensinar habilidades técnicas (Hard Skills) do que desenvolver competências comportamentais (Soft Skills). Por isso, o foco no recrutamento e desenvolvimento mudou, especialmente para cargos de liderança.</p>
+                    </div>
+                    <div class="chart-container h-[400px] md:h-[350px]">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-6 bg-white border-t mt-12">
+        <p class="text-gray-600">Infográfico SPA gerado com base no material de revisão para o ENADE 2025.</p>
+    </footer>
+
+    <script>
+        window.onload = function () {
+            
+            const palette = {
+                darkBlue: '#073B4C',
+                midBlue: '#118AB2',
+                green: '#06D6A0',
+                yellow: '#FFD166',
+                red: '#FF6B6B'
+            };
+
+            const maxLabelLength = 16;
+            
+            function wrapLabel(label) {
+                if (typeof label === 'string' && label.length > maxLabelLength) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    for (const word of words) {
+                        if ((currentLine + word).length <= maxLabelLength) {
+                            currentLine += word + ' ';
+                        } else {
+                            lines.push(currentLine.trim());
+                            currentLine = word + ' ';
+                        }
+                    }
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            }
+
+            const tooltipTitleCallback = function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            const defaultChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const defaultPieOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    },
+                    legend: {
+                        position: 'top',
+                         labels: {
+                            font: {
+                                family: 'Inter'
+                            }
+                        }
+                    }
+                }
+            };
+
+            try {
+                const ctxRhEvolution = document.getElementById('rhEvolutionChart').getContext('2d');
+                new Chart(ctxRhEvolution, {
+                    type: 'bar',
+                    data: {
+                        labels: ['RH Tradicional (DP)', 'RH Estratégico (GP)'],
+                        datasets: [
+                            {
+                                label: 'Foco Operacional (Folha, Ponto)',
+                                data: [80, 20],
+                                backgroundColor: palette.midBlue,
+                            },
+                            {
+                                label: 'Foco Estratégico (Cultura, T&D)',
+                                data: [20, 80],
+                                backgroundColor: palette.green,
+                            }
+                        ]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        scales: {
+                            x: { stacked: true },
+                            y: { stacked: true, ticks: { callback: value => value + '%' } }
+                        }
+                    }
+                });
+            } catch (e) { console.error(e); }
+
+            try {
+                const ctxCha = document.getElementById('chaChart').getContext('2d');
+                new Chart(ctxCha, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Conhecimento (Saber)', 'Habilidade (Saber Fazer)', 'Atitude (Querer Fazer)'],
+                        datasets: [{
+                            data: [30, 40, 30],
+                            backgroundColor: [palette.midBlue, palette.green, palette.yellow],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: defaultPieOptions
+                });
+            } catch (e) { console.error(e); }
+
+            try {
+                const ctxAdMethods = document.getElementById('adMethodsChart').getContext('2d');
+                const adLabels = ['Riqueza do Feedback', 'Complexidade de Aplicação', 'Custo', 'Foco no Desenvolvimento', 'Simplicidade'].map(wrapLabel);
+                new Chart(ctxAdMethods, {
+                    type: 'radar',
+                    data: {
+                        labels: adLabels,
+                        datasets: [
+                            {
+                                label: 'Avaliação 90º (Líder)',
+                                data: [3, 2, 2, 4, 9],
+                                fill: true,
+                                backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                                borderColor: palette.red,
+                                pointBackgroundColor: palette.red,
+                            },
+                            {
+                                label: 'Avaliação 360º',
+                                data: [9, 8, 7, 9, 2],
+                                fill: true,
+                                backgroundColor: 'rgba(6, 214, 160, 0.2)',
+                                borderColor: palette.green,
+                                pointBackgroundColor: palette.green,
+                            }
+                        ]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 10
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error(e); }
+            
+            try {
+                const ctxTurnover = document.getElementById('turnoverChart').getContext('2d');
+                new Chart(ctxTurnover, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
+                        datasets: [{
+                            label: 'Taxa de Turnover (%)',
+                            data: [3.1, 3.5, 3.3, 4.0, 3.8, 6.2, 4.1, 3.9],
+                            borderColor: palette.red,
+                            backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                            fill: true,
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        scales: {
+                            y: { beginAtZero: true, ticks: { callback: value => value + '%' } }
+                        }
+                    }
+                });
+            } catch (e) { console.error(e); }
+
+            try {
+                const ctxHolerite = document.getElementById('holeriteChart').getContext('2d');
+                new Chart(ctxHolerite, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Composição Salarial'],
+                        datasets: [
+                            {
+                                label: 'Salário Líquido',
+                                data: [72],
+                                backgroundColor: palette.green,
+                            },
+                            {
+                                label: 'INSS',
+                                data: [11],
+                                backgroundColor: palette.red,
+                            },
+                            {
+                                label: 'IRRF',
+                                data: [10],
+                                backgroundColor: 'rgba(255, 107, 107, 0.6)',
+                            },
+                            {
+                                label: 'Outros Descontos (VT, etc)',
+                                data: [7],
+                                backgroundColor: 'rgba(255, 107, 107, 0.4)',
+                            }
+                        ]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        indexAxis: 'y',
+                        scales: {
+                            x: { stacked: true, ticks: { callback: value => value + '%' } },
+                            y: { stacked: true }
+                        }
+                    }
+                });
+            } catch (e) { console.error(e); }
+
+            try {
+                const ctxEsg = document.getElementById('esgChart').getContext('2d');
+                new Chart(ctxEsg, {
+                    type: 'pie',
+                    data: {
+                        labels: ['E - Environmental', 'S - Social (Foco do RH)', 'G - Governance'],
+                        datasets: [{
+                            data: [33.3, 33.3, 33.3],
+                            backgroundColor: [palette.yellow, palette.green, palette.midBlue],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        ...defaultPieOptions,
+                        plugins: {
+                            ...defaultPieOptions.plugins,
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error(e); }
+            
+            try {
+                const ctxSkills = document.getElementById('skillsChart').getContext('2d');
+                const skillLabels = ['Inteligência Emocional', 'Liderança Servidora', 'Comunicação', 'Domínio Software X', 'Conhecimento Fiscal'].map(wrapLabel);
+                new Chart(ctxSkills, {
+                    type: 'bar',
+                    data: {
+                        labels: skillLabels,
+                        datasets: [
+                            {
+                                label: 'Soft Skill',
+                                data: [9.5, 9.2, 8.8, null, null],
+                                backgroundColor: palette.midBlue,
+                            },
+                            {
+                                label: 'Hard Skill',
+                                data: [null, null, null, 7.0, 6.5],
+                                backgroundColor: palette.yellow,
+                            }
+                        ]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        indexAxis: 'y',
+                        scales: {
+                            x: { max: 10, title: { display: true, text: 'Importância para Liderança (0-10)' } }
+                        }
+                    }
+                });
+            } catch (e) { console.error(e); }
+
+        };
+    </script>
+</body>
+</html>

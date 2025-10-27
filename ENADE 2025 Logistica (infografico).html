@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Revisão Logística ENADE 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 280px;
+            max-height: 350px;
+        }
+        .chart-container-pareto {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        .chart-container-line {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+            .chart-container-pareto {
+                height: 350px;
+            }
+            .chart-container-line {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #0078D4;
+            line-height: 1;
+            margin: 0 0.5rem;
+        }
+        .flow-box {
+            background-color: #ffffff;
+            border: 2px solid #005CB9;
+            color: #004386;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 120px;
+        }
+        .flow-box-sm {
+            background-color: #f0f9ff;
+            border: 1px solid #48A1E5;
+            color: #005CB9;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        .icon-unicode {
+            font-size: 2rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-[#004386] text-white p-6 shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold">Infográfico: Revisão Logística ENADE 2025</h1>
+            <p class="text-lg text-[#9CD1F5]">Os conceitos fundamentais para sua prova, de forma visual.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#004386] mb-4">Lauda 1: Fundamentos da Logística e SCM</h2>
+                <p class="text-base mb-6">A base de tudo: Logística é a parte operacional focada no fluxo, enquanto SCM é a gestão estratégica de toda a rede de relacionamentos.</p>
+                
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1 p-4 border border-gray-200 rounded-lg">
+                        <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Logística vs. SCM</h3>
+                        <div class="p-4 bg-[#f0f9ff] border-2 border-dashed border-[#0078D4] rounded-lg text-center">
+                            <h4 class="font-bold text-lg text-[#004386]">Supply Chain Management (SCM)</h4>
+                            <p class="text-sm mb-2">(Gestão da Rede)</p>
+                            <div class="p-4 bg-[#9CD1F5] rounded-lg text-[#004386] font-semibold">
+                                Logística
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 mt-2 text-sm">
+                                <span class="bg-white p-2 rounded shadow-sm">Compras</span>
+                                <span class="bg-white p-2 rounded shadow-sm">Produção</span>
+                                <span class="bg-white p-2 rounded shadow-sm">Marketing</span>
+                                <span class="bg-white p-2 rounded shadow-sm">Financeiro</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 p-4 border border-gray-200 rounded-lg">
+                        <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Os 7 Direitos (7 C's)</h3>
+                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 text-center">
+                            <div class="flex flex-col items-center p-2"><span class="icon-unicode mb-2">📦</span><span class="font-semibold text-sm">Produto Certo</span></div>
+                            <div class="flex flex-col items-center p-2"><span class="icon-unicode mb-2">🔢</span><span class="font-semibold text-sm">Quantidade Certa</span></div>
+                            <div class="flex flex-col items-center p-2"><span class="icon-unicode mb-2">✅</span><span class="font-semibold text-sm">Condição Certa</span></div>
+                            <div class="flex flex-col items-center p-2"><span class="icon-unicode mb-2">📍</span><span class="font-semibold text-sm">Lugar Certo</span></div>
+                            <div class="flex flex-col items-center p-2"><span class="icon-unicode mb-2">⏱️</span><span class="font-semibold text-sm">Tempo Certo</span></div>
+                            <div class="flex flex-col items-center p-2"><span class="icon-unicode mb-2">👤</span><span class="font-semibold text-sm">Cliente Certo</span></div>
+                            <div class="flex flex-col items-center p-2 col-span-3 sm:col-span-1"><span class="icon-unicode mb-2">💰</span><span class="font-semibold text-sm">Custo Certo</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Fluxos Logísticos</h3>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0 flex-wrap">
+                        <div class="flow-box">Fornecedor</div>
+                        <div class="flex flex-col items-center mx-2">
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="text-sm font-semibold text-[#0078D4]">Inbound</span>
+                        </div>
+                        <div class="flow-box">Industrial</div>
+                        <div class="flex flex-col items-center mx-2">
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="text-sm font-semibold text-[#0078D4]">Outbound</span>
+                        </div>
+                        <div class="flow-box">Cliente</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#004386] mb-4">Lauda 2: Transportes</h2>
+                <p class="text-base mb-6">O modal de transporte define o equilíbrio entre custo, velocidade e flexibilidade. A escolha impacta diretamente o custo logístico total.</p>
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Comparativo de Modais (1=Pior, 5=Melhor)</h3>
+                <div class="chart-container">
+                    <canvas id="modaisChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-4">Intermodal vs. Multimodal</h3>
+                <p class="text-base mb-6">Ambos usam múltiplos modos, mas a diferença está no documento e na responsabilidade.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-[#0078D4] mb-2">Intermodal</h4>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flow-box-sm">🚚</div>
+                            <div class="text-center"><span class="flow-arrow">&rarr;</span><br><span class="text-xs font-bold">Doc 1</span></div>
+                            <div class="flow-box-sm">🚢</div>
+                            <div class="text-center"><span class="flow-arrow">&rarr;</span><br><span class="text-xs font-bold">Doc 2</span></div>
+                            <div class="flow-box-sm">🚂</div>
+                        </div>
+                        <p class="text-sm text-center mt-2">Múltiplos documentos. Responsabilidade fracionada.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-[#00A396] mb-2">Multimodal (via OTM)</h4>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="flow-box-sm">🚚</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm">🚢</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm">🚂</div>
+                        </div>
+                        <p class="text-sm text-center mt-2"><b>Documento Único.</b> OTM com responsabilidade total.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#004386] mb-4">Lauda 2: Gestão de Estoques</h2>
+                <p class="text-base mb-6">Estoque é um "pulmão" necessário, mas seu custo deve ser minimizado. A ruptura (falta) é o pior custo de todos.</p>
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Composição dos Custos de Estoque</h3>
+                <div class="chart-container">
+                    <canvas id="custosEstoqueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-4">Ferramenta: Curva ABC</h3>
+                <p class="text-base mb-6">Baseada no Princípio de Pareto (80/20), foca os esforços de controle nos itens mais valiosos (Classe A).</p>
+                <div class="chart-container-pareto">
+                    <canvas id="curvaAbcChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#004386] mb-4">Lauda 3: Armazenagem e Pedidos</h2>
+                <p class="text-base mb-6">O Centro de Distribuição (CD) moderno é um ponto de fluxo, não de estoque parado. A separação (picking) é a atividade mais crítica.</p>
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Funções Clássicas do Armazém</h3>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0 flex-wrap">
+                    <div class="flow-box">Recebimento</div>
+                    <span class="flow-arrow">&rarr;</span>
+                    <div class="flow-box">Estocagem</div>
+                    <span class="flow-arrow">&rarr;</span>
+                    <div class="flow-box">Separação (Picking)</div>
+                    <span class="flow-arrow">&rarr;</span>
+                    <div class="flow-box">Expedição</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-[#0078D4] mb-2">Armazenagem Tradicional</h4>
+                        <div class="flex items-center justify-center gap-2 flex-wrap">
+                            <div class="flow-box-sm">Recebe</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm bg-[#48A1E5] text-white font-bold">Guarda (Estoca)</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm">Separa</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm">Expede</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-[#00A396] mb-2">Conceito: Cross-Docking</h4>
+                        <div class="flex items-center justify-center gap-2 flex-wrap">
+                            <div class="flow-box-sm">Recebe</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm">Separa</div>
+                            <span class="flow-arrow">&rarr;</span>
+                            <div class="flow-box-sm">Expede</div>
+                        </div>
+                        <p class="text-sm text-center mt-2">O produto não é estocado, apenas transita pelo CD, reduzindo custos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-4">O Efeito Chicote (Bullwhip Effect)</h3>
+                <p class="text-base mb-6">Pequenas variações na demanda do cliente final são amplificadas à medida que sobem na cadeia, gerando estoques excessivos ou rupturas. A causa é a falta de visibilidade da informação.</p>
+                <div class="chart-container-line">
+                    <canvas id="efeitoChicoteChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#004386] mb-4">Lauda 4: Tópicos Estratégicos e KPIs</h2>
+                <p class="text-base mb-6">Medir para gerenciar. Os KPIs (Indicadores-Chave de Desempenho) mostram a saúde da operação. OTIF é o indicador mais completo de nível de serviço.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">OTIF (On-Time In-Full)</h3>
+                        <p class="text-center text-sm mb-2">Entregas "No Prazo" E "Completas".</p>
+                        <div class="chart-container">
+                            <canvas id="otifChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#005CB9] mb-3 text-center">Acuracidade do Inventário</h3>
+                        <p class="text-center text-sm mb-2">Percentual do estoque físico que bate com o sistema.</p>
+                        <div class="chart-container">
+                            <canvas id="acuracidadeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <h3 class="text-lg font-semibold text-[#005CB9]">Giro de Estoque</h3>
+                        <p class="text-4xl font-bold text-[#004386] my-2">10x</p>
+                        <p class="text-sm">Quantas vezes o estoque "girou" no período. (Maior = Melhor)</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <h3 class="text-lg font-semibold text-[#005CB9]">Custo Logístico Total</h3>
+                        <p class="text-4xl font-bold text-[#004386] my-2">8,5%</p>
+                        <p class="text-sm">Custo total (transp., estoque, etc.) como % da Receita.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-4">Logística 4.0</h3>
+                <p class="text-base mb-6">A aplicação de tecnologias da Indústria 4.0 para otimizar e automatizar a logística.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <span class="icon-unicode text-[#0078D4]">📡</span>
+                        <h4 class="font-bold mt-2">IoT</h4>
+                        <p class="text-sm">Rastreamento em tempo real</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <span class="icon-unicode text-[#0078D4]">🤖</span>
+                        <h4 class="font-bold mt-2">Inteligência Artificial</h4>
+                        <p class="text-sm">Roteirização e automação</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <span class="icon-unicode text-[#0078D4]">📊</span>
+                        <h4 class="font-bold mt-2">Big Data</h4>
+                        <p class="text-sm">Análise e previsão de demanda</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <span class="icon-unicode text-[#0078D4]">💻</span>
+                        <h4 class="font-bold mt-2">Sistemas (TMS/WMS)</h4>
+                        <p class="text-sm">Gestão integrada</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold text-[#005CB9] mb-4">Logística Reversa</h3>
+                <p class="text-base mb-6">O fluxo oposto, do consumo de volta à origem, focado em sustentabilidade (Pós-Consumo) ou reparos (Pós-Venda).</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-[#00A396] mb-2">Pós-Consumo ♻️</h4>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="flow-box-sm">Cliente</div>
+                            <span class="font-bold text-2xl text-[#00A396]">&darr;</span>
+                            <div class="flow-box-sm">Coleta Seletiva / PNRS</div>
+                            <span class="font-bold text-2xl text-[#00A396]">&darr;</span>
+                            <div class="flow-box-sm">Reciclagem / Destino</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-center text-[#0078D4] mb-2">Pós-Venda 🔄</h4>
+                        <div class="flex flex-col items-center gap-2">
+                            <div class="flow-box-sm">Cliente (Devolução)</div>
+                            <span class="font-bold text-2xl text-[#0078D4]">&darr;</span>
+                            <div class="flow-box-sm">Empresa</div>
+                            <span class="font-bold text-2xl text-[#0078D4]">&darr;</span>
+                            <div class="flow-box-sm">Reparo / Troca / Re-estoque</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#004386] mb-4">Lauda 4: Logística Global e Incoterms</h2>
+                <p class="text-base mb-6">Incoterms definem as responsabilidades (risco, custo, seguro) entre comprador e vendedor no comércio internacional.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h3 class="text-xl font-semibold text-center text-[#005CB9] mb-2">FOB (Free On Board)</h3>
+                        <p class="text-sm text-center mb-4">A responsabilidade do vendedor termina quando a carga <b class="text-[#005CB9]">cruza a amurada do navio</b> no porto de <b class="text-[#005CB9]">origem</b>.</p>
+                        <div class="w-full h-2 bg-gray-200 rounded-full flex">
+                            <div class="w-1/2 h-2 bg-[#0078D4] rounded-l-full" title="Vendedor"></div>
+                            <div class="w-1/2 h-2 bg-[#00A396] rounded-r-full" title="Comprador"></div>
+                        </div>
+                        <div class="flex justify-between text-xs mt-1">
+                            <span>Vendedor</span>
+                            <span>Navio</span>
+                            <span>Comprador</span>
+                        </div>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h3 class="text-xl font-semibold text-center text-[#005CB9] mb-2">CIF (Cost, Insurance, and Freight)</h3>
+                        <p class="text-sm text-center mb-4">O vendedor paga o custo, seguro e frete até o porto de <b class="text-[#005CB9]">destino</b>. (O risco, porém, transfere no porto de origem, como no FOB).</p>
+                        <div class="w-full h-2 bg-gray-200 rounded-full flex">
+                            <div class="w-full h-2 bg-[#0078D4] rounded-full" title="Vendedor Paga"></div>
+                        </div>
+                        <div class="flex justify-between text-xs mt-1">
+                            <span>Vendedor Paga Frete/Seguro</span>
+                            <span>Destino</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-[#004386] text-white p-4 text-center mt-8">
+        <p>&copy; 2025 - Material de Revisão Visual para Logística.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colors = {
+                darkBlue: '#004386',
+                medBlue: '#005CB9',
+                brightBlue: '#0078D4',
+                lightBlue: '#48A1E5',
+                paleBlue: '#9CD1F5',
+                teal: '#00A396'
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+
+            const defaultChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#374151'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#374151'
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#374151'
+                        },
+                        grid: {
+                            color: '#e5e7eb'
+                        }
+                    }
+                }
+            };
+
+            if (document.getElementById('modaisChart')) {
+                const ctx = document.getElementById('modaisChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Rodoviário', 'Ferroviário', 'Aquaviário', 'Aéreo', 'Dutoviário'],
+                        datasets: [
+                            {
+                                label: 'Custo (Invertido)',
+                                data: [3, 4, 5, 1, 5],
+                                backgroundColor: colors.medBlue,
+                            },
+                            {
+                                label: 'Velocidade',
+                                data: [4, 2, 1, 5, 3],
+                                backgroundColor: colors.brightBlue,
+                            },
+                            {
+                                label: 'Flexibilidade',
+                                data: [5, 2, 1, 3, 1],
+                                backgroundColor: colors.teal,
+                            }
+                        ]
+                    },
+                    options: { ...defaultChartOptions }
+                });
+            }
+
+            if (document.getElementById('custosEstoqueChart')) {
+                const ctx = document.getElementById('custosEstoqueChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [
+                            'Custo de Manutenção', 
+                            'Custo de Pedido', 
+                            ['Custo de Falta', '(Ruptura)']
+                        ],
+                        datasets: [{
+                            label: 'Composição de Custo',
+                            data: [45, 20, 35],
+                            backgroundColor: [colors.lightBlue, colors.teal, colors.darkBlue],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: '#374151'
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (document.getElementById('curvaAbcChart')) {
+                const ctx = document.getElementById('curvaAbcChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Classe A (20% Itens)', 'Classe B (30% Itens)', 'Classe C (50% Itens)'],
+                        datasets: [
+                            {
+                                type: 'bar',
+                                label: '% do Valor Total',
+                                data: [80, 15, 5],
+                                backgroundColor: colors.medBlue,
+                                yAxisID: 'y'
+                            },
+                            {
+                                type: 'line',
+                                label: '% Valor Acumulado',
+                                data: [80, 95, 100],
+                                borderColor: colors.teal,
+                                backgroundColor: colors.teal,
+                                tension: 0.1,
+                                yAxisID: 'y1'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: '#374151'
+                                }
+                            },
+                            y: {
+                                type: 'linear',
+                                position: 'left',
+                                max: 100,
+                                ticks: { color: colors.medBlue, callback: value => value + '%' },
+                                grid: { display: false }
+                            },
+                            y1: {
+                                type: 'linear',
+                                position: 'right',
+                                max: 100,
+                                ticks: { color: colors.teal, callback: value => value + '%' },
+                                grid: { display: false }
+                            }
+                        }
+                    }
+                });
+            }
+
+            if (document.getElementById('efeitoChicoteChart')) {
+                const ctx = document.getElementById('efeitoChicoteChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8'],
+                        datasets: [
+                            {
+                                label: 'Demanda Cliente',
+                                data: [100, 105, 100, 95, 100, 110, 105, 100],
+                                borderColor: colors.brightBlue,
+                                tension: 0.1,
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'Pedido Varejo',
+                                data: [100, 110, 95, 85, 100, 120, 110, 90],
+                                borderColor: colors.lightBlue,
+                                tension: 0.1,
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'Pedido Distribuidor',
+                                data: [100, 120, 90, 70, 100, 140, 120, 80],
+                                borderColor: colors.teal,
+                                tension: 0.1,
+                                borderWidth: 3
+                            },
+                            {
+                                label: 'Pedido Indústria',
+                                data: [100, 140, 80, 50, 100, 180, 140, 60],
+                                borderColor: colors.darkBlue,
+                                tension: 0.1,
+                                borderWidth: 4
+                            }
+                        ]
+                    },
+                    options: { ...defaultChartOptions }
+                });
+            }
+
+            if (document.getElementById('otifChart')) {
+                const ctx = document.getElementById('otifChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['OTIF Atingido', 'Falha (On-Time ou In-Full)'],
+                        datasets: [{
+                            data: [93.1, 6.9],
+                            backgroundColor: [colors.medBlue, colors.paleBlue],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'top', labels: { color: '#374151' } },
+                            tooltip: { callbacks: { title: tooltipTitleCallback } }
+                        }
+                    }
+                });
+            }
+            
+            if (document.getElementById('acuracidadeChart')) {
+                const ctx = document.getElementById('acuracidadeChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Estoque Acurado', 'Divergência'],
+                        datasets: [{
+                            data: [98.5, 1.5],
+                            backgroundColor: [colors.teal, colors.paleBlue],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'top', labels: { color: '#374151' } },
+                            tooltip: { callbacks: { title: tooltipTitleCallback } }
+                        }
+                    }
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>

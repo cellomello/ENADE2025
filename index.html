@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENADE 2025 - Infográficos | Centro Universitário Uninovo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .tabs-container {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 140px;
+            z-index: 999;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 5px;
+        }
+
+        .tab {
+            padding: 12px 25px;
+            background: #f5f5f5;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #1a237e;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab:hover {
+            background: #e3f2fd;
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .content-container {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .infographic-content {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            /* Allow iframe content to extend and be fully visible;
+               if infographics are hosted same-origin consider adding JS to
+               resize the iframe to its content height for perfect fit. */
+            overflow: visible;
+            min-height: 80vh;
+        }
+
+        .infographic-content.active {
+            display: block;
+        }
+
+        .infographic-frame {
+            width: 100%;
+            min-height: 85vh;
+            border: none;
+            display: block;
+        }
+
+        .welcome-screen {
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .welcome-screen h2 {
+            color: #1a237e;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .welcome-screen p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .welcome-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        .instruction {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 5px solid #1a237e;
+        }
+
+        .instruction p {
+            color: #1a237e;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #5e92f3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #90caf9;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .logo {
+                max-width: 150px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .welcome-screen h2 {
+                font-size: 1.8em;
+            }
+
+            .welcome-screen p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://uninovo.edu.br/wp-content/uploads/2023/10/logo.png" alt="Centro Universitário Uninovo" class="logo">
+        <h1>ENADE 2025</h1>
+        <p class="subtitle">Infográficos dos Cursos</p>
+    </div>
+
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" onclick="showInfographic('welcome')">🏠 Início</button>
+            <button class="tab" onclick="showInfographic('administracao')">📊 Administração</button>
+            <button class="tab" onclick="showInfographic('logistica')">📦 Logística</button>
+            <button class="tab" onclick="showInfographic('marketing')">📢 Marketing</button>
+            <button class="tab" onclick="showInfographic('rh')">👥 Recursos Humanos</button>
+            <button class="tab" onclick="showInfographic('pg')">🎓 Pós-Graduação</button>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div id="welcome" class="infographic-content active">
+            <div class="welcome-screen">
+                <div class="welcome-icon">📚</div>
+                <h2>Bem-vindo aos Infográficos ENADE 2025</h2>
+                <p>Explore os infográficos detalhados dos cursos participantes do ENADE 2025. Cada infográfico apresenta informações importantes sobre o exame, orientações para os estudantes e dados relevantes sobre a avaliação.</p>
+                <div class="instruction">
+                    <p>👆 Selecione uma das abas acima para visualizar o infográfico do curso desejado</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="administracao" class="infographic-content">
+            <iframe src="ENADE 2025 Administracao (infografico).html" class="infographic-frame"></iframe>
+        </div>
+
+        <div id="logistica" class="infographic-content">
+            <iframe src="ENADE 2025 Logistica (infografico).html" class="infographic-frame"></iframe>
+        </div>
+
+        <div id="marketing" class="infographic-content">
+            <iframe src="ENADE 2025 Marketing (infografico).html" class="infographic-frame"></iframe>
+        </div>
+
+        <div id="rh" class="infographic-content">
+            <iframe src="ENADE 2025 Recursos Humanos (infografico).html" class="infographic-frame"></iframe>
+        </div>
+
+        <div id="pg" class="infographic-content">
+            <iframe src="ENADE 2025 PG (infografico).html" class="infographic-frame"></iframe>
+
+    <script>
+        // Helper to safely adjust an iframe's height to its content (falls back to a large height on cross-origin)
+        function adjustIframeHeight(iframe) {
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                // Use both body and documentElement to get a robust height
+                const height = Math.max(
+                    iframeDoc.body ? iframeDoc.body.scrollHeight : 0,
+                    iframeDoc.documentElement ? iframeDoc.documentElement.scrollHeight : 0
+                );
+                iframe.style.height = height + 'px';
+            } catch (e) {
+                // Cross-origin or access denied — set a generous default height
+                iframe.style.height = '3000px';
+            }
+        }
+
+        function showInfographic(id) {
+            // Remove active class from all tabs and contents
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.infographic-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to the tab that corresponds to the id (tries common selectors)
+            const tabSelectorCandidates = [
+                `.tab[data-target="${id}"]`,
+                `.tab[data-id="${id}"]`,
+                `.tab[href="#${id}"]`,
+                `#${id}-tab`
+            ];
+            let matchedTab = null;
+            for (const sel of tabSelectorCandidates) {
+                matchedTab = document.querySelector(sel);
+                if (matchedTab) break;
+            }
+            if (matchedTab) matchedTab.classList.add('active');
+
+            // Activate the content
+            const contentEl = document.getElementById(id);
+            if (contentEl) contentEl.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Adjust iframe height after loading
+            if (id !== 'welcome') {
+                const iframe = document.querySelector(`#${id} iframe`);
+                if (iframe) {
+                    // Attach onload to adjust when the iframe finishes loading
+                    iframe.onload = function() {
+                        adjustIframeHeight(iframe);
+                    };
+                    // If already loaded, try adjusting immediately
+                    if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                        adjustIframeHeight(iframe);
+                    }
+                }
+            }
+        }
+
+        // Adjust all iframe heights on page load and when each iframe loads
+        window.addEventListener('load', function() {
+            const iframes = document.querySelectorAll('.infographic-frame');
+            iframes.forEach(iframe => {
+                // Attach onload handler
+                iframe.onload = function() {
+                    adjustIframeHeight(iframe);
+                };
+                // If already loaded, adjust now
+                try {
+                    if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                        adjustIframeHeight(iframe);
+                    }
+                } catch (e) {
+                    // ignore
+                }
+            });
+
+            // Optional: periodically try to adjust heights for same-origin iframes that may change size dynamically
+            // This is conservative (runs rarely) to avoid performance impact.
+            setInterval(() => {
+                document.querySelectorAll('.infographic-frame').forEach(iframe => {
+                    try {
+                        adjustIframeHeight(iframe);
+                    } catch (e) { /* ignore */ }
+                });
+            }, 3000);
+        });
+    </script>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Centro Universitário Uninovo</strong></p>
+        <p>
+            Av. Getúlio Vargas, 1360 - Bairro Novo, Olinda - PE | CEP: 53030-010 | Tel: (81) 3493-2956<br>
+            <a href="https://uninovo.edu.br/home" target="_blank">www.uninovo.edu.br</a>
+        </p>
+    </footer>
+
+    <script>
+        function showInfographic(id) {
+            // Remove active class from all tabs and contents
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.infographic-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to selected tab and content
+            event.target.classList.add('active');
+            document.getElementById(id).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
