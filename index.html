@@ -97,11 +97,19 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+            display: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             /* Allow iframe content to extend and be fully visible;
                if infographics are hosted same-origin consider adding JS to
                resize the iframe to its content height for perfect fit. */
             overflow: visible;
-            min-height: 80vh;
+        }
+        /* Aumenta significativamente a altura padrão do iframe e remove a limitação de altura mínima */
+        .infographic-content .infographic-frame {
+            height: 5000px;
         }
 
         .infographic-content.active {
@@ -250,20 +258,44 @@
             <iframe src="ENADE 2025 PG (infografico).html" class="infographic-frame"></iframe>
 
     <script>
-        // Helper to safely adjust an iframe's height to its content (falls back to a large height on cross-origin)
-        function adjustIframeHeight(iframe) {
+        // Helper to safely adjust an iframe's height to its content (falls back to a large height on cross-origin).
+        // This version uses multiple measurement properties and schedules a delayed re-check to catch late rendering.
+        function adjustIframeHeight(iframe, extraPadding = 50, delay = 500) {
+            const measure = (doc) => {
+                if (!doc) return 0;
+                const body = doc.body;
+                const html = doc.documentElement;
+                const metrics = (el) => el ? Math.max(el.scrollHeight || 0, el.offsetHeight || 0, el.clientHeight || 0) : 0;
+                return Math.max(metrics(body), metrics(html));
+            };
+
             try {
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                // Use both body and documentElement to get a robust height
-                const height = Math.max(
-                    iframeDoc.body ? iframeDoc.body.scrollHeight : 0,
-                    iframeDoc.documentElement ? iframeDoc.documentElement.scrollHeight : 0
-                );
-                iframe.style.height = height + 'px';
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                const height = measure(doc);
+                if (height > 0) {
+                    iframe.style.height = (height + extraPadding) + 'px';
+                } else {
+                    // Fallback to a moderate default if measurements returned 0
+                    iframe.style.height = (800 + extraPadding) + 'px';
+                }
             } catch (e) {
                 // Cross-origin or access denied — set a generous default height
-                iframe.style.height = '3000px';
+                iframe.style.height = '5000px';
+                return;
             }
+
+            // Schedule a delayed re-calculation to ensure content that renders after initial load is captured
+            setTimeout(() => {
+                try {
+                    const doc2 = iframe.contentDocument || iframe.contentWindow.document;
+                    const height2 = measure(doc2);
+                    if (height2 > 0) {
+                        iframe.style.height = (height2 + extraPadding) + 'px';
+                    }
+                } catch (e) {
+                    iframe.style.height = '5000px';
+                }
+            }, delay);
         }
 
         function showInfographic(id) {
